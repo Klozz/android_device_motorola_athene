@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 
 # CMActions
 PRODUCT_PACKAGES += \
-    CMActions
+    #CMActions
 
 # Display
 PRODUCT_PACKAGES += \
