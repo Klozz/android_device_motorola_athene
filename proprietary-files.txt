@@ -596,7 +596,6 @@ vendor/lib/libchromatix_s5k3m2xx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k3m2xx_zsl_video_ad5816g.so
 
 # CNE
--priv-app/CNEService/CNEService.apk
 etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/cne/wqeclient/ATT/ATT_profile1.xml
@@ -613,8 +612,6 @@ etc/cne/wqeclient/VZW/VZW_profile3.xml
 etc/cne/wqeclient/VZW/VZW_profile4.xml
 etc/cne/wqeclient/VZW/VZW_profile5.xml
 etc/cne/wqeclient/VZW/VZW_profile6.xml
-framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneconn.so
@@ -630,8 +627,6 @@ vendor/lib/libmm-qdcm.so
 vendor/lib/libsd_sdk_display.so
 
 # DPM
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
 
 # DRM
 bin/qseecomd
@@ -672,14 +667,6 @@ etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
 
 # Framework
-framework/embmslibrary.jar
-framework/izat.xt.srv.jar
-framework/qmapbridge.jar
-framework/QPerformance.jar
-framework/qti-telephony-common.jar
-framework/rcsservice.jar
-framework/tcmclient.jar
-framework/tcmiface.jar
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8952.so
@@ -735,8 +722,6 @@ bin/gpsone_daemon
 bin/loc_launcher
 etc/permissions/com.qualcomm.location.vzw_library.xml
 etc/permissions/com.qualcomm.location.xml
-framework/com.qti.location.sdk.jar
-framework/com.qualcomm.location.vzw_library.jar
 lib/hw/gps.default.so
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
@@ -771,7 +756,6 @@ etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
 
 # IMS
--framework/imscmlibrary.jar
 bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
@@ -779,7 +763,6 @@ bin/ims_rtp_daemon
 etc/permissions/com.motorola.msimsettings.xml
 etc/permissions/ims.xml
 etc/permissions/imscm.xml
-framework/rcsimssettings.jar
 vendor/lib/lib-ims-rcscmjni.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
@@ -913,7 +896,6 @@ bin/tcmd
 bin/tcmdhelp
 bin/tftp_server
 etc/permissions/com.motorola.frameworks.core.addon.xml
-framework/com.motorola.motosignature.jar
 lib/libmotaudioutils.so
 lib/libmotext_inf.so
 lib/libmotimager_utils.so
@@ -926,7 +908,6 @@ vendor/lib/libmotocalibration.so
 bin/port-bridge
 etc/permissions/izat.xt.srv.xml
 etc/permissions/qti_permissions.xml
-framework/ConnectivityExt.jar
 lib/libnetfilter_conntrack.so
 lib/libqti_performance.so
 vendor/bin/qti
@@ -942,10 +923,7 @@ vendor/lib/libqti_performance.so
 vendor/lib/libstlport_sta.so
 
 # Radio
--framework/qcnvitems.jar
--framework/qcrilhook.jar
 -lib/libril.so
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 bin/netmgrd
 bin/qmi_motext_hook
 bin/qmuxd
@@ -995,7 +973,6 @@ etc/permissions/com.qti.snapdragon.sdk.display.xml
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-framework/qcom.fmradio.jar
 lib/libdhcpcd.so
 lib/libdmengine.so
 lib/libdmjavaplugin.so
@@ -1054,7 +1031,6 @@ vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
 # Time
--app/TimeService/TimeService.apk
 -vendor/lib/libtime_genoff.so
 bin/time_daemon
 vendor/lib/libTimeService.so
