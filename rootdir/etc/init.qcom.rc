@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
-import init.mmi.usb.rc
+# import init.qcom.power.rc
+# import init.mmi.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -633,6 +633,7 @@ service config_bt_addr /system/bin/btnvtool -O
     user bluetooth
     group bluetooth radio
     oneshot
+    disabled
 
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
@@ -644,6 +645,7 @@ service imsqmidaemon /system/bin/imsqmidaemon
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service imsdatadaemon /system/bin/imsdatadaemon
@@ -726,12 +728,15 @@ service qmuxd /system/bin/qmuxd
     user root
     group radio audio bluetooth gps nfc qcom_diag wakelock
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
     user root
     group radio system wakelock
+    disabled
     writepid /dev/cpuset/system-background/tasks
+
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -820,6 +825,7 @@ service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet net_raw qcom_diag net_admin wifi
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 on property:hw.fm.init=1
@@ -832,6 +838,7 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+    disabled
 
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     class late_start
@@ -847,6 +854,7 @@ service ril-daemon /system/bin/rild
     socket cutback stream 660 media radio
     user root
     group radio cache inet misc audio sdcard_rw sensors qcom_diag log net_raw diag wakelock
+    disabled
 
 service ril-daemon1 /system/bin/rild -c 2
     class main
@@ -1066,6 +1074,7 @@ service adsprpcd /system/bin/adsprpcd
     class main
     user media
     group media
+    disabled
 
 service per_mgr /system/bin/pm-service
     class core
@@ -1103,6 +1112,8 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
+    disabled
+
 
 service qseecomd /system/bin/qseecomd
     class core
