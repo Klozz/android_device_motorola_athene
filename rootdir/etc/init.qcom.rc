@@ -885,6 +885,7 @@ service diag_mdlog_stop /system/bin/diag_mdlog -k
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
+    disabled
     group system
 
 # Start Sensor daemon
