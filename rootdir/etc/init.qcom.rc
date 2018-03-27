@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# import init.qcom.power.rc
+import init.qcom.power.rc
 # import init.mmi.usb.rc
 
 on early-init
@@ -668,6 +668,7 @@ service rmt_storage /system/bin/rmt_storage
 service tftp_server /system/bin/tftp_server
     class main
     user root
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 on property:wc_transport.start_hci=true
@@ -686,6 +687,7 @@ service config_bluetooth /system/bin/sh /init.qcom.bt.sh "onboot"
     class core
     user bluetooth
     group bluetooth system
+    disabled
     oneshot
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
@@ -736,7 +738,6 @@ service netmgrd /system/bin/netmgrd
     group radio system wakelock
     disabled
     writepid /dev/cpuset/system-background/tasks
-
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -1061,6 +1062,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
    class late_start
    user camera
    group camera system inet input graphics
+   disabled
    writepid /dev/cpuset/system-background/tasks
 
 # Allow usb charging to be disabled peristently
@@ -1112,8 +1114,6 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
-    disabled
-
 
 service qseecomd /system/bin/qseecomd
     class core

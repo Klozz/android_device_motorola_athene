@@ -83,7 +83,7 @@ procfs_wait_for_device()
 		status=$(cat $mpi/reload)
 		notice "$mpi reload is [$status]"
 		while [ "$status" != "$reload_done" ]; do
-			notice "waiting for loading to complete"
+			notice "waiting for loading to complete ($mpi)"
 			sleep 1;
 			status=$(cat $mpi/reload)
 		done
