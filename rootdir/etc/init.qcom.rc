@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
+# import init.qcom.power.rc
 # import init.mmi.usb.rc
 
 on early-init
@@ -255,7 +255,7 @@ on boot
     chmod 0664 /sys/class/leds/charging/brightness
 
     # Change permission for backlight
-    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chmod 0666 /sys/class/leds/lcd-backlight/brightness
 
     # set permission for Dynamic-CABC feature
     chown system system /sys/class/graphics/fb0/cabc_mode
@@ -645,8 +645,8 @@ service imsqmidaemon /system/bin/imsqmidaemon
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
-    disabled
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service imsdatadaemon /system/bin/imsdatadaemon
     class main
@@ -755,8 +755,8 @@ service qti /system/vendor/bin/qti
     class main
     user radio
     group radio net_raw qcom_diag usb net_admin
-    writepid /dev/cpuset/system-background/tasks
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -835,11 +835,11 @@ on property:hw.fm.init=1
 on property:hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-    disabled
+#service atfwd /system/bin/ATFWD-daemon
+#    class late_start
+#    user system
+#    group system radio
+#    disabled
 
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     class late_start
@@ -870,6 +870,7 @@ service rild1-wrapper /system/bin/sh /system/etc/init.qcom.ril.sh
     user root
     group root
     oneshot
+    disabled
 
 service ssr_diag /system/bin/ssr_diag
     class late_start
@@ -1058,12 +1059,12 @@ service setup_shutdown /system/bin/setup_shutdown.sh
    oneshot
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
-   class late_start
-   user camera
-   group camera system inet input graphics
-   disabled
-   writepid /dev/cpuset/system-background/tasks
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#   class late_start
+#   user camera
+#   group camera system inet input graphics
+#   disabled
+#   writepid /dev/cpuset/system-background/tasks
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -1114,6 +1115,7 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
+    disabled
 
 service qseecomd /system/bin/qseecomd
     class core

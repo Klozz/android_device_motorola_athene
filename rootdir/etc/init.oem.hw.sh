@@ -122,7 +122,7 @@ set_ro_hw_properties()
 IFS=$'\n'
 
 notice "initializing procfs"
-procfs_wait_for_device readiness
+#procfs_wait_for_device readiness
 
 set_ro_hw_properties
 
