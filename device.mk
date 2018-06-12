@@ -104,12 +104,7 @@ PRODUCT_COPY_FILES +=  \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8952 \
-    libbson \
-    Snap
-
-# CMActions
-PRODUCT_PACKAGES += \
-    #CMActions
+    libbson
 
 # Display
 PRODUCT_PACKAGES += \
