@@ -4,6 +4,9 @@ on init
     chmod 0664 /dev/ion
     chown system system /dev/ion
 
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
+
 service sbinqseecomd /sbin/qseecomd
     oneshot
     disabled
