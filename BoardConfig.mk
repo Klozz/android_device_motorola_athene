@@ -83,4 +83,3 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_THEME := portrait_hdpi
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT := true
-TW_USE_TOOLBOX := true
